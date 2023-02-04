@@ -10,7 +10,7 @@ from pageObjectModel.all_pages import allPages
 @given('Launch browser')
 def launch_browser(context):
     """
-        This function retrieved data from the specific API Request
+        This function launch browser
     """
     context.driver = webdriver.Chrome(executable_path="C:\chromedriver\chromedriver.exe")
 
@@ -18,7 +18,7 @@ def launch_browser(context):
 @Step('Open home page of Saucedemo')
 def open_home_page(context):
     """
-        This function assert that the code response is 200
+        This function go to Saucedemo login page
     """
     context.driver.get("https://www.saucedemo.com/")
     time.sleep(2)
@@ -27,7 +27,7 @@ def open_home_page(context):
 @Step('Enter credentials "{user}" and "{pwd}"')
 def login_with_the_test_user(context, user, pwd):
     """
-        This function assert that the code response is 200
+        This function insert credentials
     """
     context.driver.find_element(By.ID, allPages.user_name).click()
     time.sleep(0.3)
@@ -40,7 +40,7 @@ def login_with_the_test_user(context, user, pwd):
 @Step('Click login button')
 def login_with_the_test_user(context):
     """
-        This function assert that the code response is 200
+        This function click in login button
     """
     context.driver.find_element(By.ID, allPages.login_button).click()
     time.sleep(1)
@@ -49,7 +49,7 @@ def login_with_the_test_user(context):
 @Step('Add product to the cart')
 def add_product_to_cart(context):
     """
-        This function assert that the code response is 200
+        This function add product to the cart
     """
     context.driver.find_element(By.ID, allPages.add_to_cart_first_product_of_the_list).click()
     time.sleep(1)
@@ -58,7 +58,7 @@ def add_product_to_cart(context):
 @Step('Go to cart')
 def go_to_cart(context):
     """
-        This function assert that the code response is 200
+        This function click and go to cart
     """
     context.driver.find_element(By.ID, allPages.button_cart).click()
     time.sleep(1)
@@ -67,7 +67,7 @@ def go_to_cart(context):
 @Step('Click in Checkout')
 def click_checkout(context):
     """
-        This function assert that the code response is 200
+        This function click and go tu checkout
     """
     context.driver.find_element(By.ID, allPages.button_checkout).click()
     time.sleep(1)
@@ -76,7 +76,7 @@ def click_checkout(context):
 @Step('Assert that im in "{page}"')
 def close_browser(context, page):
     """
-        This function assert that exist at least one user
+        This function assert diferentes pages are displayed
     """
 
     if page == "Login page":
@@ -92,6 +92,6 @@ def close_browser(context, page):
 @Step('Close the browser')
 def close_browser(context):
     """
-        This function assert that exist at least one user
+        This function close the browser
     """
     context.driver.close()

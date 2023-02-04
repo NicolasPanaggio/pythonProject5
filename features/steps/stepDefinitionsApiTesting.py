@@ -9,9 +9,7 @@ def get_api_data(context):
     """
     context.response = response
     # print(response_content)
-    # print(json_response)
     # print(response.status_code)
-    # print(format_json)
 
 
 @Step('Assert code response is 200')
@@ -68,7 +66,6 @@ def assert_exist_user(context):
         for p in split_nameofapi:
             take_firs_letter = take_firs_letter + p[0]
 
-    # Take first letter of the names and join in same string
     print(take_firs_letter)
     letter_to_find = "C"
     find_letter = take_firs_letter.find(letter_to_find)
