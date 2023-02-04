@@ -11,6 +11,10 @@ class allPages():
 
     #Checkout Page
     button_checkout = "checkout"
+    tbx_name = "first-name"
+    tbx_lastname = "last-name"
+    tbx_zip_code = "postal-code"
+    button_continue_checkout_page = "continue"
 
     #Assertions
     icon_swag_labs_center_screen = "/html/body/div/div/div[1]"
@@ -19,3 +23,10 @@ class allPages():
     shopping_cart_num_of_products_added = "shopping_cart_badge"
     button_continue_shopping = "continue-shopping"
     button_cancel = "cancel"
+    button_finish = "finish"
+    pony_express_final_page = "pony_express"
+
+    #Assertions for checkout overview product details
+    price_of_product = "inventory_item_price"
+    price_total_of_product_in_product_page = "summary_subtotal_label"
+

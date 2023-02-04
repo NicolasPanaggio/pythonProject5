@@ -13,4 +13,10 @@ Feature: Test Cases for GIG Test - UI
     And Assert that im in "Cart page"
     When Click in Checkout
     And Assert that im in "Checkout page"
+    And Enter first name "Nicolas" and last name "Panaggio" and zip code "9999"
+    When Click in button continue in checkout page
+    And Assert that im in "Checkout overview page"
+    And Assert the details of the product in checkout overview label
+    And Click in finish button checkout page
+    And Assert that im in "Final page"
     Then Close the browser

@@ -87,6 +87,10 @@ def close_browser(context, page):
         context.driver.find_element(By.ID, allPages.button_continue_shopping).is_displayed()
     if page == "Checkout page":
         context.driver.find_element(By.ID, allPages.button_cancel).is_displayed()
+    if page == "Checkout overview page":
+        context.driver.find_element(By.ID, allPages.button_finish).is_displayed()
+    if page == "Final page":
+        context.driver.find_element(By.CLASS_NAME, allPages.pony_express_final_page).is_displayed()
 
 
 @Step('Assert that the product was added and the icon with the number of products added in cart')
@@ -98,6 +102,47 @@ def assert_product_added(context):
     time.sleep(0.3)
     context.driver.find_element(By.CLASS_NAME, allPages.shopping_cart_num_of_products_added).is_displayed()
 
+
+@Step('Enter first name "{name}" and last name "{lastname}" and zip code "{zipcode}"')
+def insert_data_in_checkout_form(context, name, lastname, zipcode):
+    """
+        This function insert data in checkout form
+    """
+    context.driver.find_element(By.ID, allPages.tbx_name).send_keys(name)
+    time.sleep(0.3)
+    context.driver.find_element(By.ID, allPages.tbx_lastname).send_keys(lastname)
+    time.sleep(0.3)
+    context.driver.find_element(By.ID, allPages.tbx_zip_code).send_keys(zipcode)
+    time.sleep(0.3)
+
+
+@Step('Click in button continue in checkout page')
+def click_button_continue_checkout_page(context):
+    """
+        This function click in continue button in checkout page
+    """
+    context.driver.find_element(By.ID, allPages.button_continue_checkout_page).click()
+    time.sleep(1)
+
+
+@Step('Assert the details of the product in checkout overview label')
+def assert_checkout_overivew_details(context):
+    """
+        This function assert the information of the product in checkout overview
+    """
+    price_of_product_variable = context.driver.find_element(By.CLASS_NAME, allPages.price_of_product).text
+    price_total_of_product_in_product_page_variable = context.driver.find_element(By.CLASS_NAME, allPages.price_total_of_product_in_product_page).text
+    assertion_variable_price = "Item total: " + price_of_product_variable
+    assert price_total_of_product_in_product_page_variable == assertion_variable_price, "Product is not valid, the price is different"
+
+
+@Step('Click in finish button checkout page')
+def click_in_finish_button_checkout_page(context):
+    """
+        This function assert the information of the product in checkout overview
+    """
+    context.driver.find_element(By.ID, allPages.button_finish).click()
+    time.sleep(1)
 
 @Step('Close the browser')
 def close_browser(context):
