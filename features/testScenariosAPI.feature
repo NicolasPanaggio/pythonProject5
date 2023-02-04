@@ -1,4 +1,4 @@
-Feature: Test Cases for GIG Test
+Feature: Test Cases for GIG Test - API
 
   Scenario: TEST 1 - Verify at least one user return and fail when a response is not returned
     Given Get API

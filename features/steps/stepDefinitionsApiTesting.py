@@ -14,7 +14,7 @@ def get_api_data(context):
     # print(format_json)
 
 
-@when('Assert code response is 200')
+@Step('Assert code response is 200')
 def assert_code_response(context):
     """
         This function assert that the code response is 200
@@ -26,7 +26,7 @@ def assert_code_response(context):
     assert code_response == 200, "Code response is NOT 200, the data WASNT obtained"
 
 
-@then('Assert that exist an user')
+@Step('Assert that exist an user')
 def assert_exist_user(context):
     """
         This function assert that exist at least one user
@@ -53,7 +53,7 @@ def assert_exist_user(context):
     assert variable_for_assert == 2, "Doesnt contain users in the list"
 
 
-@then('Assert one user name have letter C')
+@Step('Assert one user name have letter C')
 def assert_exist_user(context):
     """
         This function assert that one user name have letter C
@@ -78,7 +78,7 @@ def assert_exist_user(context):
     assert find_letter != -1, f"No names start with the letter {letter_to_find}"
 
 
-@then('Retrieve list of users and show in console and assert user count')
+@Step('Retrieve list of users and show in console and assert user count')
 def retrieve_list_and_show_in_console_and_assert_users_count(context):
     """
         This function retrieve a list and show in console
@@ -89,11 +89,11 @@ def retrieve_list_and_show_in_console_and_assert_users_count(context):
     # Logic for show users in console
     for key in json_response:
         names_of_api = str(key)
-        # print(names_of_api)
+        print(names_of_api)
 
     # Count of users
     counter_users = len(json_response)
-    # print(counter_users)
+    print(counter_users)
 
     if counter_users >= 0:
         variable_for_assert = 2
