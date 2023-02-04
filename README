@@ -1,0 +1,24 @@
+pythonProject5
+GIG API and UI QA Automation Testing
+
+This is a skills test project.
+
+Index
+
+features/MethodsDev ----------------------------- Definitions for get response of API and handle the data.
+
+features/steps/stepDefinitionsApiTesting.py ----- Definition of the steps for API Testing.
+
+features/steps/stepDefinitionsUITesting.py ------ Definition of the steps for UI Testing.
+
+features/testScenariosAPI.feature -------------------- Gherkin definition of steps for API Testing.
+
+features/testScenariosUI.feature --------------------- Gherkin definition of steps for UI Testing.
+
+features/pageObjectModel/all_pages.py ------ Mockup of pages for Page Object Model Patron Desing
+
+Language: .Python.
+
+IDE: .Pycharm.
+
+Necessary library imports: Selenium/Requests/Behave/JsonPath/Cucumber
