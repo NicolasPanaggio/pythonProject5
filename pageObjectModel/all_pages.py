@@ -15,5 +15,7 @@ class allPages():
     #Assertions
     icon_swag_labs_center_screen = "/html/body/div/div/div[1]"
     burger_menu_button = "react-burger-menu-btn"
+    button_remove_product = "remove-sauce-labs-backpack"
+    shopping_cart_num_of_products_added = "shopping_cart_badge"
     button_continue_shopping = "continue-shopping"
     button_cancel = "cancel"

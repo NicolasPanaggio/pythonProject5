@@ -8,6 +8,7 @@ Feature: Test Cases for GIG Test - UI
     When Click login button
     And Assert that im in "Product page"
     And Add product to the cart
+    Then Assert that the product was added and the icon with the number of products added in cart
     When Go to cart
     And Assert that im in "Cart page"
     When Click in Checkout

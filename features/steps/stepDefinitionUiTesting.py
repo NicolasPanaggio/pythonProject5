@@ -52,7 +52,7 @@ def add_product_to_cart(context):
         This function add product to the cart
     """
     context.driver.find_element(By.ID, allPages.add_to_cart_first_product_of_the_list).click()
-    time.sleep(1)
+    time.sleep(2)
 
 
 @Step('Go to cart')
@@ -87,6 +87,16 @@ def close_browser(context, page):
         context.driver.find_element(By.ID, allPages.button_continue_shopping).is_displayed()
     if page == "Checkout page":
         context.driver.find_element(By.ID, allPages.button_cancel).is_displayed()
+
+
+@Step('Assert that the product was added and the icon with the number of products added in cart')
+def assert_product_added(context):
+    """
+        This function assert that the product was added to the cart and the change of the icon of the cart
+    """
+    context.driver.find_element(By.ID, allPages.button_remove_product).is_displayed()
+    time.sleep(0.3)
+    context.driver.find_element(By.CLASS_NAME, allPages.shopping_cart_num_of_products_added).is_displayed()
 
 
 @Step('Close the browser')
